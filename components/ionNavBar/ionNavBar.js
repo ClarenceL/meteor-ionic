@@ -1,4 +1,4 @@
-Template.ionNavBar.created = function () {
+Template.ionNavBar.onCreated(function () {
   this.data = this.data || {};
 
   if (Platform.isAndroid()) {
@@ -17,12 +17,10 @@ Template.ionNavBar.created = function () {
   } else {
     this.transitionDuration = 200;
   }
-};
+});
 
-Template.ionNavBar.rendered = function () {
+Template.ionNavBar.onRendered(function () {
   Session.set('hasHeader', true);
-
-  debugger;
 
   IonHeaderBar.alignTitle.call(this);
   IonHeaderBar.positionTitle.call(this);
@@ -94,7 +92,7 @@ Template.ionNavBar.rendered = function () {
       }
     }
   };
-};
+});
 
 Template.ionNavBar.destroyed = function () {
   Session.set('hasHeader', false);
