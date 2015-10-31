@@ -22,6 +22,8 @@ Template.ionNavBar.created = function () {
 Template.ionNavBar.rendered = function () {
   Session.set('hasHeader', true);
 
+  debugger;
+
   IonHeaderBar.alignTitle.call(this);
   IonHeaderBar.positionTitle.call(this);
 
